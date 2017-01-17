@@ -79,7 +79,7 @@ class Handler(BaseHandler):
                 self.deal.save_brief(brief)
                 self.crawl(brief.OriginalURL, callback=self.save_img, save={'save_path': save_path})
                 
-    @config(priority=3)   
+    @config(priority=3)
     def save_img(self,response):
         content=response.content
         file_path=response.save['save_path']
